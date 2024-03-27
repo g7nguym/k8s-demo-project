@@ -4,6 +4,9 @@ metadata:
   name: mssql-2022-std
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: mssql-2022-std
   template:
     metadata:
       labels:
