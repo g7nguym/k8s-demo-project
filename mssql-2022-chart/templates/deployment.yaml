@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mssql-2022-std
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        name: mssql-2022-std
+    spec:
+      containers:
+      - name: mssql-2022-std
+        image: mcr.microsoft.com/mssql/rhel/server:2022-latest
+        ports:
+        - containerPort: 1433
+        env:
+        - name: SA_PASSWORD
+          value: "ChangeMe01"
+        - name: ACCEPT_EULA
+          value: "Y"
