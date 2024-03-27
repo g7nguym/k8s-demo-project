@@ -4,7 +4,7 @@ metadata:
   name: mssql-2022-std
 spec:
   ports:
-  - name: sqlserver
+  - name: mssql-2022-std
     port: 1433
     targetPort: 1433
   selector:
