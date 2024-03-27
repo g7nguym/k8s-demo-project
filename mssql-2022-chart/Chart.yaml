@@ -1,5 +1,5 @@
 apiVersion: v2
-name: mssql-2022-chart
+name: mssql-2022-std
 description: MSSQL 2022 Image based on RHEL - Helm Chart
 
 # A chart can be either an 'application' or a 'library' chart.
