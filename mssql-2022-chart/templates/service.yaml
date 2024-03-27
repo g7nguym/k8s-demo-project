@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mssql-2022-std
+  name: mssql-2022-std-lb
 spec:
   ports:
   - name: mssql-2022-std
     port: 1433
     targetPort: 1433
   selector:
-    name: sqlserver
+    name: mssql-2022-std
   type: LoadBalancer
