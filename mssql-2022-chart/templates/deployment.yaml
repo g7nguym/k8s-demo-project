@@ -14,27 +14,27 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}
-        image: mcr.microsoft.com/mssql/rhel/server:2022-latest
+        image: {{.Values.image}}
         ports:
-        - containerPort: 1433
+        - containerPort: {{ .Values.containerPort }}
         env:
         - name: SA_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mssql
-              key: MSSQL_SA_PASSWORD
+              name: {{ .Values.secretName }}
+              key: {{ .Values.secretKey }}
         - name: ACCEPT_EULA
           value: "Y"
       volumeMounts:
-     - name: mssql-2022-std
+     - name: {{ .Release.Name }}
        mountPath: "/var/opt/mssql"
 volumeClaimTemplates:
    - metadata:
-      name: mssql-2022-std
+      name: {{ .Release.Name }}
      spec:
-      storageClassName: piraeus-storage
+      storageClassName: {{ .Values.storageClassName }}
       accessModes:
-      - ReadWriteOnce
+      - {{ .Values.accessMode }}
       resources:
        requests:
-        storage: 64Gi
+        storage: {{ .Values.storageSizes }}
