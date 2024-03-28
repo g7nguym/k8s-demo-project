@@ -31,10 +31,10 @@ spec:
 volumeClaimTemplates:
    - metadata:
       name: {{ .Release.Name }}
-     spec:
-      storageClassName: {{ .Values.storageClassName }}
-      accessModes:
-      - {{ .Values.accessMode }}
-      resources:
-       requests:
-        storage: {{ .Values.storageSize }}
+      spec:
+        storageClassName: {{ .Values.storageClassName }}
+        accessModes:
+        - {{ .Values.accessMode }}
+        resources:
+          requests:
+            storage: {{ .Values.storageSize }}
