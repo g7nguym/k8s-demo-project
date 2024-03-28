@@ -37,4 +37,4 @@ volumeClaimTemplates:
       - {{ .Values.accessMode }}
       resources:
        requests:
-        storage: {{ .Values.storageSizes }}
+        storage: {{ .Values.storageSize }}
