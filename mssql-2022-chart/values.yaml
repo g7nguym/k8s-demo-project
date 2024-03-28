@@ -13,7 +13,7 @@ secretName: mssql
 secretKey: MSSQL_SA_PASSWORD
 # Define persistence volumes for deployment
 storageClassName: piraeus-storage
-accessMode: ReadWriteOnce
+accessMode: ReadWriteMany
 storageSize: 64Gi
 service:
   port: 1433
