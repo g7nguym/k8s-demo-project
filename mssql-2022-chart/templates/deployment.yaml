@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mssql-2022-std
+  name: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      name: mssql-2022-std
+      name: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        name: mssql-2022-std
+        name: {{ .Release.Name }}
     spec:
       containers:
-      - name: mssql-2022-std
+      - name: {{ .Release.Name }}
         image: mcr.microsoft.com/mssql/rhel/server:2022-latest
         ports:
         - containerPort: 1433
