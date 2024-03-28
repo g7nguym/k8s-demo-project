@@ -26,10 +26,10 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
       volumeMounts:
-      - name: {{ .Release.Name }}volume
+      - name: {{ .Release.Name }}-volume
         mountPath: "/var/opt/mssql"
       volumes:
-      - name: {{ .Release.Name }}volume
+      - name: {{ .Release.Name }}-volume
         persistentVolumeClaim:
-          claimName: {{ .Release.Name }}volume
+          claimName: {{ .Release.Name }}-volume
 
