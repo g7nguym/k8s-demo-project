@@ -7,14 +7,21 @@ spec:
   selector:
     matchLabels:
       name: {{ .Release.Name }}
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         name: {{ .Release.Name }}
     spec:
+      terminationGracePeriodSeconds: 10
+      securityContext:
+        fsGroup: 1000
       containers:
       - name: {{ .Release.Name }}
         image: {{.Values.image}}
+        securityContext:
+          runAsUser: 0
         ports:
         - containerPort: {{ .Values.containerPort }}
         env:
