@@ -19,6 +19,22 @@ spec:
         - containerPort: 1433
         env:
         - name: SA_PASSWORD
-          value: "ChangeMe01"
+          valueFrom:
+            secretKeyRef:
+              name: mssql
+              key: MSSQL_SA_PASSWORD
         - name: ACCEPT_EULA
           value: "Y"
+      volumeMounts:
+     - name: mssql-2022-std
+       mountPath: "/var/opt/mssql"
+volumeClaimTemplates:
+   - metadata:
+      name: mssql-2022-std
+     spec:
+      storageClassName: piraeus-storage
+      accessModes:
+      - ReadWriteOnce
+      resources:
+       requests:
+        storage: 64Gi
