@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # Define how many replicas the deployment should have
-replicaCount: 3
+replicaCount: 1
 # Define which image to pull from
 image: mcr.microsoft.com/mssql/rhel/server:2022-latest
 # Define which port MSSQL container will listen on
