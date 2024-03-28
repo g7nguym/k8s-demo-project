@@ -15,3 +15,5 @@ secretKey: MSSQL_SA_PASSWORD
 storageClassName: piraeus-storage
 accessMode: ReadWriteOnce
 storageSize: 64Gi
+service:
+  port: 1433
