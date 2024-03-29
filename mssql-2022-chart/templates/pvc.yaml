@@ -8,4 +8,4 @@ spec:
     requests:
       storage: {{ .Values.storageSize }}
   accessModes:
-    - ReadWriteOnce
+    - {{ .Values.accessMode }}
