@@ -4,11 +4,7 @@
 
 replicaCount: 1
 
-image:
-  repository: checkmk/check-mk-raw
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "2.3.0-latest"
+image: checkmk/check-mk-raw:2.3.0-latest
 storageClassName: piraeus-storage
 accessMode: ReadWriteOnce
 storageSize: 32Gi
