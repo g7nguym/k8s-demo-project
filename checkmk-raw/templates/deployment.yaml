@@ -56,13 +56,4 @@ spec:
       - name: {{ .Release.Name }}-volume
         persistentVolumeClaim:
           claimName: {{ .Release.Name }}-volume
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
       
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
