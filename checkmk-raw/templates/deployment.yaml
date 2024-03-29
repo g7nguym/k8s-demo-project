@@ -48,7 +48,7 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          
+            
           volumeMounts:
         - name: {{ .Release.Name }}-volume
           mountPath: "/omd/sites"
