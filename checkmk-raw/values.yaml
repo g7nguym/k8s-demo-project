@@ -18,7 +18,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 config:
-    updateStrategy: Rolling
+    updateStrategy: RollingUpdate
 
 serviceAccount:
   # Specifies whether a service account should be created
