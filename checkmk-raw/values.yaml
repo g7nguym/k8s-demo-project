@@ -43,7 +43,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 443
+  port: 80
 
 ingress:
   enabled: false
@@ -76,11 +76,11 @@ resources:
 livenessProbe:
   httpGet:
     path: /
-    port: https
+    port: http
 readinessProbe:
   httpGet:
     path: /
-    port: https
+    port: http
 
 autoscaling:
   enabled: false
