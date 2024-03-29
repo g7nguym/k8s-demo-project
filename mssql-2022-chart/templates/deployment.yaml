@@ -8,7 +8,7 @@ spec:
     matchLabels:
       name: {{ .Release.Name }}
   strategy:
-    type: Recreate
+    type: Rolling
   template:
     metadata:
       labels:
