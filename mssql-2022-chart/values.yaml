@@ -12,7 +12,7 @@ containerPort: 1433
 secretName: mssql
 secretKey: MSSQL_SA_PASSWORD
 # Define persistence volumes for deployment
-storageClassName: piraeus-storage
+storageClassName: k8s-storage
 accessMode: ReadWriteMany
 storageSize: 64Gi
 service:
